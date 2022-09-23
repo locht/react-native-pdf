@@ -13,15 +13,15 @@ A react native PDF view component (cross-platform support)
 * jump to a specific page in the pdf
 
 ### Supported versions
-We use [`react-native-blob-util`](https://github.com/RonRadtke/react-native-blob-util) to handle file system access in this package,
-So you should install react-native-pdf and react-native-blob-util
+We use [`rn-fetch-blob`] to handle file system access in this package,
+So you should install react-native-pdf and rn-fetch-blob
 
-> The table below shows the supported versions of React Native and react-native-blob-util for different versions of `react-native-pdf`.
+> The table below shows the supported versions of React Native and rn-fetch-blob for different versions of `react-native-pdf`.
 
 | React Native              | 0.4x - 0.56     | 0.57    | 0.60+    | 0.62+    | 0.62+    |
 | ------------------------- | --------------- | ------- | -------- | -------- | -------- |
 | react-native-pdf          | 4.x.x - 5.0.x   | 5.0.9+  | 6.0.0+   | 6.2.0+   | 6.4.0+   |
-| react-native-blob-util    |                 |         |          |          | 0.13.7+  |
+| rn-fetch-blob             |                 |         |          |          | ++       |
 
 
 > 🚨 Expo: This package is not available in the [Expo Go](https://expo.dev/client) app. Learn how you can use this package in [Custom Dev Clients](https://docs.expo.dev/development/getting-started/) via the out-of-tree [Expo Config Plugin](https://github.com/expo/config-plugins/tree/master/packages/react-native-pdf). Example: [`with-pdf`](https://github.com/expo/examples/tree/master/with-pdf).
@@ -30,10 +30,10 @@ So you should install react-native-pdf and react-native-blob-util
 
 ```bash
 # Using npm
-npm install react-native-pdf react-native-blob-util --save
+npm install react-native-pdf rn-fetch-blob --save
 
 # or using yarn:
-yarn add react-native-pdf react-native-blob-util
+yarn add react-native-pdf rn-fetch-blob
 ```
 
 Then follow the instructions for your platform to link react-native-pdf into your project:
@@ -49,7 +49,7 @@ Run `pod install` in the `ios` directory. Linking is not required in React Nativ
 **React Native 0.59 and below**
 
 ```bash
-react-native link react-native-blob-util
+react-native link rn-fetch-blob
 react-native link react-native-pdf
 ```
 </details>
@@ -76,7 +76,7 @@ android {
 
 **React Native 0.59.0 and below**
 ```bash
-react-native link react-native-blob-util
+react-native link rn-fetch-blob
 react-native link react-native-pdf
 ```
 
