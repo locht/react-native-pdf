@@ -21,5 +21,6 @@ Pod::Spec.new do |s|
   install_modules_dependencies(s)
 
   s.source_files   = 'ios/**/*.{h,m}'
+  s.dependency 'React-Core'
 
 end

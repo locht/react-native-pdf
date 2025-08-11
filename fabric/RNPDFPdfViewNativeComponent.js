@@ -10,6 +10,7 @@
 
 import type {ViewProps} from 'react-native/Libraries/Components/View/ViewPropTypes';
 import type {HostComponent} from 'react-native';
+import type {BubblingEventHandler} from 'react-native/Libraries/Types/CodegenTypes';
 import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
 
 type Event = $ReadOnly<{|
@@ -33,7 +34,7 @@ type NativeProps = $ReadOnly<{|
   fitPolicy: number,
   singlePage: boolean,
   // Events
-  onChange: (event: Event) => void,
+  onChange: BubblingEventHandler<Event>,
 |}>;
 
 export default (codegenNativeComponent<NativeProps>(
