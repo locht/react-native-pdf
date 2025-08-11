@@ -48,18 +48,5 @@
         "PdfViewFlatList.js",
         "PinchZoomView.js",
         "react-native-pdf.podspec"
-    ],
-    "codegenConfig": {
-      "name": "rnpdf",
-      "type": "components",
-      "jsSrcsDir": "./fabric",
-      "android": {
-        "javaPackageName": "org.wonday.pdf"
-      },
-      "ios": {
-        "componentProvider": {
-          "RNPDFPdfView": "RNPDFPdfView"
-        }
-      }
-    }
+    ]
 }
