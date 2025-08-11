@@ -476,19 +476,36 @@ export default class Pdf extends Component {
     }
 }
 
-if (Platform.OS === 'android') {
-    var PdfCustom = requireNativeComponent('RCTPdf', Pdf, {
-        nativeOnly: { path: true, onChange: true },
-    });
-} else if (Platform.OS === 'ios') {
-    var PdfCustom = requireNativeComponent('RCTPdfView', Pdf, {
-        nativeOnly: { path: true, onChange: true },
-    });
-} else if (Platform.OS === 'windows') {
-    var PdfCustom = requireNativeComponent('RCTPdf', Pdf, {
-        nativeOnly: { path: true, onChange: true },
-    });
-}
+// Hide Fabric
+// if (Platform.OS === 'android') {
+//     var PdfCustom = requireNativeComponent('RCTPdf', Pdf, {
+//         nativeOnly: { path: true, onChange: true },
+//     });
+// } else if (Platform.OS === 'ios') {
+//     var PdfCustom = requireNativeComponent('RCTPdfView', Pdf, {
+//         nativeOnly: { path: true, onChange: true },
+//     });
+// } else if (Platform.OS === 'windows') {
+//     var PdfCustom = requireNativeComponent('RCTPdf', Pdf, {
+//         nativeOnly: { path: true, onChange: true },
+//     });
+// }
+// Fabric support
+const isFabric = global.nativeFabricUIManager != null;
+
+const PdfCustom = isFabric
+    ? require('./fabric/RNPDFPdfViewNativeComponent').default
+    : Platform.select({
+          android: requireNativeComponent('RCTPdf', Pdf, {
+              nativeOnly: {path: true, onChange: true},
+          }),
+          ios: requireNativeComponent('RCTPdfView', Pdf, {
+              nativeOnly: {path: true, onChange: true},
+          }),
+          windows: requireNativeComponent('RCTPdf', Pdf, {
+              nativeOnly: {path: true, onChange: true},
+          }),
+      });
 
 const styles = StyleSheet.create({
     progressContainer: {
