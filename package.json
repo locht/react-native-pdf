@@ -58,7 +58,9 @@
         "javaPackageName": "org.wonday.pdf"
       },
       "ios": {
-        "componentProvider": "RNPDFPdfView"
+        "componentProvider": {
+          "RNPDFPdfView": "RNPDFPdfView"
+        }
       }
     }
 }
